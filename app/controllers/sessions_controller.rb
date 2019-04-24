@@ -2,7 +2,8 @@ class SessionsController < ActionController::Base
 
   #load form for new session
   def new
-    render :new
+    @user = User.new
+    render :login
   end
 
   #create a new session from params

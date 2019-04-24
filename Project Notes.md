@@ -47,6 +47,8 @@ belongs_to :user
 
 name: string - A User will title their tip
 comment: text - A User will provide a description for their tip
+player_id :integer
+game_id :integer
 
 
 ## Scope Methods

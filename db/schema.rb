@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_23_182852) do
+ActiveRecord::Schema.define(version: 2019_04_24_205945) do
+
+  create_table "games", force: :cascade do |t|
+    t.integer "gameweek"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.string "team"
+    t.string "position"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tips", force: :cascade do |t|
+    t.string "title"
+    t.text "comment"
+    t.integer "player_id"
+    t.integer "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_tips_on_game_id"
+    t.index ["player_id"], name: "index_tips_on_player_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"

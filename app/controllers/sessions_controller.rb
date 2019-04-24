@@ -1,4 +1,4 @@
-class SessionsController < ActionController::Base
+class SessionsController < ApplicationController
 
   #load form for new session
   def new
@@ -13,7 +13,7 @@ class SessionsController < ActionController::Base
       session[:user_id] = @user.id
       redirect_to tips_path
     else
-      render :new
+      redirect_to '/login'
     end
   end
 

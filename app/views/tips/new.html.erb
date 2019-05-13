@@ -1,0 +1,21 @@
+<h1>Add a tip!</h1>
+
+<%= form_for(@tip) do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <br><br>
+
+  <%= f.label :game %>
+  <%= f.select :game_id, (1..38) %>
+
+  <br><br>
+
+  <%= f.label :player %>
+  <%= f.text_field :player_id %>
+
+  <br><br>
+
+  <%= f.submit %>
+<% end %>

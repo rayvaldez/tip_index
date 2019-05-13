@@ -1,4 +1,5 @@
 class Tip < ApplicationRecord
-  belongs_to :player
-  belongs_to :game
+  belongs_to :user
+
+  validates :title, presence: true
 end

@@ -1,0 +1,22 @@
+<h1>Add a player</h1>
+
+<%= form_for(@player) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <br><br>
+
+  <%= f.label :team %>
+  <%= f.text_field :team %>
+
+  <br><br>
+
+  <%= f.label :position %>
+  <%= f.select(:position, options_for_select([ "Goalkeeper", "Defender", "Midfielder", "Forward"])) %>
+
+  <br><br>
+
+  <%= f.submit %>
+
+<% end %>

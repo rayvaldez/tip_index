@@ -8,10 +8,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
 
-  resources :tips, only: [:index, :new]
-
   resources :games, only: [:index] do
-    resources :tips, only: [:new, :show]
+    resources :tips, only: [:new, :create, :show]
   end
 
   resources :players, only: [:index, :new, :create, :show]

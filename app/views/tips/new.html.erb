@@ -1,6 +1,6 @@
 <h1>Add a tip!</h1>
 
-<%= form_for(@tip) do |f| %>
+<%= form_for [@game, @tip] do |f| %>
 
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -8,7 +8,7 @@
   <br><br>
 
   <%= f.label :game %>
-  <%= f.select :game_id, (1..38) %>
+  <%= f.collection_select :game_id, Game.all, :id, :gameweek, {:selected => @game.id}, {:disabled => true} %>
 
   <br><br>
 

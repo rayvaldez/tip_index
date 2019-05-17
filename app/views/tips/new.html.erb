@@ -13,9 +13,10 @@
   <br><br>
 
   <%= f.label :player %>
-  <%= f.text_field :player_id %>
+  <%= f.collection_select :player_id, Player.all, :name, :name, prompt: "Select Player" %> Player not listed? <%= link_to "Add a player", new_player_path(@player) %> 
 
   <br><br>
 
   <%= f.submit %>
+
 <% end %>

@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_04_24_205945) do
   create_table "tips", force: :cascade do |t|
     t.string "title"
     t.text "comment"
+    t.decimal "price", precision: 8, scale: 2
     t.integer "player_id"
     t.integer "game_id"
     t.datetime "created_at", null: false

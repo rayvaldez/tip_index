@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
 
-  resources :games, only: [:index] do
+  resources :games, only: [:index, :show] do
     resources :tips, only: [:new, :create, :show]
   end
 

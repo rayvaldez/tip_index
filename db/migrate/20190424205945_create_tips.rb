@@ -4,6 +4,7 @@ class CreateTips < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :comment
       t.decimal :price, :precision => 8, :scale => 2
+      t.references :user, foreign_key: true
       t.references :player, foreign_key: true
       t.references :game, foreign_key: true
 

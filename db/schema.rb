@@ -31,12 +31,14 @@ ActiveRecord::Schema.define(version: 2019_04_24_205945) do
     t.string "title"
     t.text "comment"
     t.decimal "price", precision: 8, scale: 2
+    t.integer "user_id"
     t.integer "player_id"
     t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_tips_on_game_id"
     t.index ["player_id"], name: "index_tips_on_player_id"
+    t.index ["user_id"], name: "index_tips_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
